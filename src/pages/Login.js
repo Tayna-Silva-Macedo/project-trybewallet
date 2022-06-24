@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import Input from '../components/Input';
 import { addUserEmailAction } from '../actions';
 
+import '../pages/login.css';
+import carteira from '../images/carteira.png';
+
 class Login extends React.Component {
   state = {
     email: '',
@@ -20,14 +23,15 @@ class Login extends React.Component {
       },
       () => {
         this.formValidation();
-      },
+      }
     );
   };
 
   formValidation = () => {
     const { email, password } = this.state;
 
-    const regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const regex =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const MIN_LENGTH_PASSWORD = 6;
 
     const isEmailOk = email.match(regex);
@@ -53,25 +57,36 @@ class Login extends React.Component {
     const { email, password, disabled } = this.state;
 
     return (
-      <div>
-        <form>
+      <div className='form-container'>
+        <form className='form-login'>
+          <img
+            src={carteira}
+            alt='Desenho de uma carteira'
+            className='wallet'
+          />
+          <p>Faça seu login!</p>
           <Input
-            data-testid="email-input"
-            label="E-mail"
-            type="email"
-            name="email"
-            value={ email }
-            onChange={ this.handleChange }
+            data-testid='email-input'
+            label='E-mail: '
+            type='email'
+            name='email'
+            value={email}
+            onChange={this.handleChange}
           />
           <Input
-            data-testid="password-input"
-            label="Senha"
-            type="password"
-            name="password"
-            value={ password }
-            onChange={ this.handleChange }
+            data-testid='password-input'
+            label='Senha: '
+            type='password'
+            name='password'
+            value={password}
+            onChange={this.handleChange}
           />
-          <button type="button" disabled={ disabled } onClick={ this.handleSubmit }>
+          <button
+            className='button'
+            type='button'
+            disabled={disabled}
+            onClick={this.handleSubmit}
+          >
             Entrar
           </button>
         </form>

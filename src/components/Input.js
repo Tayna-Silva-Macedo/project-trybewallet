@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../components/input.css';
+
 class Input extends React.Component {
   render() {
     const { label, type, name, value, onChange } = this.props;
