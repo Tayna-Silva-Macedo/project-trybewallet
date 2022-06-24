@@ -1,0 +1,57 @@
+.header,
+.title-container {
+  align-items: center;
+  display: flex;
+}
+
+.header {
+  background-color: #2a2344;
+  color: white;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header .wallet {
+  margin-left: 50px;
+  margin-right: 20px;
+  width: 50px;
+}
+
+.header-title span {
+  color: #20af3f;
+}
+
+.wallet-container {
+  display: flex;
+  font-size: large;
+  justify-content: space-around;
+  margin-right: 50px;
+  padding: 10px;
+}
+
+.wallet-container .wallet-email {
+  align-items: center;
+  display: flex;
+  margin-right: 20px;
+}
+.wallet-container .wallet-email .user-email {
+  margin-left: 10px;
+}
+
+.wallet-container .wallet-funds {
+  align-items: center;
+  display: flex;
+}
+
+.wallet-container .wallet-funds .user-funds {
+  margin-left: 10px;
+}
+
+.header h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header .user-image {
+  width: 25px;
+}
