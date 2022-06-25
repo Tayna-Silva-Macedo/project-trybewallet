@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteExpensesAction, setEditAction } from '../actions';
 
+import '../components/table.css';
+
 class Table extends React.Component {
   render() {
     const { expenses, deleteExpense, setEdit } = this.props;
 
     return (
       <div>
-        <table>
+        <table className='table'>
           <thead>
             <tr>
               <th>Descrição</th>
@@ -34,7 +36,7 @@ class Table extends React.Component {
                 tag,
                 value,
               }) => (
-                <tr key={ id }>
+                <tr key={id}>
                   <td>{description}</td>
                   <td>{tag}</td>
                   <td>{method}</td>
@@ -42,35 +44,37 @@ class Table extends React.Component {
                   <td>
                     {exchangeRates[currency].name.replace(
                       '/Real Brasileiro',
-                      '',
+                      ''
                     )}
                   </td>
                   <td>{parseFloat(exchangeRates[currency].ask).toFixed(2)}</td>
                   <td>
                     {(
-                      Math.floor(value * exchangeRates[currency].ask * 100)
-                      / 100
+                      Math.floor(value * exchangeRates[currency].ask * 100) /
+                      100
                     ).toFixed(2)}
                   </td>
                   <td>Real</td>
                   <td>
                     <button
-                      data-testid="edit-btn"
-                      type="button"
-                      onClick={ () => setEdit(id) }
+                      className='edit-button'
+                      data-testid='edit-btn'
+                      type='button'
+                      onClick={() => setEdit(id)}
                     >
                       Editar
                     </button>
                     <button
-                      data-testid="delete-btn"
-                      type="button"
-                      onClick={ () => deleteExpense(id) }
+                      className='delete-button'
+                      data-testid='delete-btn'
+                      type='button'
+                      onClick={() => deleteExpense(id)}
                     >
                       Excluir
                     </button>
                   </td>
                 </tr>
-              ),
+              )
             )}
           </tbody>
         </table>
