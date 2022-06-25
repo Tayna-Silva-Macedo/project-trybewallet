@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Input from './Input';
 import Select from './Select';
+import Table from './Table';
 import { addExpensesThunk, editExpenseAction } from '../actions';
 
 import '../components/form.css';
@@ -51,6 +52,13 @@ class Form extends React.Component {
     }));
   };
 
+  handleClickSetState = (expense) => {
+    this.setState((prevState) => ({
+      ...expense,
+      id: prevState.id,
+    }));
+  };
+
   render() {
     const { value, description, currency, method, tag } = this.state;
     const { currencies, editor, idToEdit } = this.props;
@@ -65,54 +73,62 @@ class Form extends React.Component {
     };
 
     return (
-      <div className='form'>
-        <Input
-          data-testid="value-input"
-          label="Valor: "
-          type="number"
-          name="value"
-          value={ value }
-          onChange={ this.handleChange }
-        />
-        <Input
-          data-testid="description-input"
-          label="Descrição: "
-          type="text"
-          name="description"
-          value={ description }
-          onChange={ this.handleChange }
-        />
-        <Select
-          label="Moeda: "
-          options={ currencies }
-          name="currency"
-          value={ currency }
-          onChange={ this.handleChange }
-        />
-        <Select
-          label="Método de pagamento: "
-          options={ paymentMethods }
-          name="method"
-          value={ method }
-          onChange={ this.handleChange }
-        />
-        <Select
-          label="Categoria: "
-          options={ category }
-          name="tag"
-          value={ tag }
-          onChange={ this.handleChange }
-        />
-        {editor ? (
-          <button type="button" onClick={ () => this.handleClickEdit(expenseEdited) }>
-            Editar despesa
-          </button>
-        ) : (
-          <button type="button" onClick={ this.handleClickAdd }>
-            Adicionar despesa
-          </button>
-        )}
-      </div>
+      <>
+        <div className='form'>
+          <Input
+            data-testid='value-input'
+            label='Valor: '
+            type='number'
+            name='value'
+            value={value}
+            onChange={this.handleChange}
+          />
+          <Input
+            data-testid='description-input'
+            label='Descrição: '
+            type='text'
+            name='description'
+            value={description}
+            onChange={this.handleChange}
+          />
+          <Select
+            label='Moeda: '
+            options={currencies}
+            name='currency'
+            value={currency}
+            onChange={this.handleChange}
+          />
+          <Select
+            label='Método de pagamento: '
+            options={paymentMethods}
+            name='method'
+            value={method}
+            onChange={this.handleChange}
+          />
+          <Select
+            label='Categoria: '
+            options={category}
+            name='tag'
+            value={tag}
+            onChange={this.handleChange}
+          />
+          {editor ? (
+            <button
+              type='button'
+              onClick={() => this.handleClickEdit(expenseEdited)}
+            >
+              Editar despesa
+            </button>
+          ) : (
+            <button type='button' onClick={this.handleClickAdd}>
+              Adicionar despesa
+            </button>
+          )}
+        </div>
+        <div>
+          <Table handleClickSetState={this.handleClickSetState}/>
+        </div>
+      </>
     );
   }
 }
