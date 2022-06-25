@@ -26,3 +26,5 @@ O TrybeWallet é uma carteira de controle de gastos com conversor de moedas. Com
 - Visualizar o total de gastos convertidos para o Real Brasileiro;
 
 ## Prévia
+
+![Project Gif](./TrybeWallet.gif)
