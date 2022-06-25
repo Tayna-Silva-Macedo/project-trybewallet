@@ -6,3 +6,11 @@ input[type=email], input[type=password] {
   padding: 5px;
   width: 70vh;
 }
+
+input[type=number], input[type=text] {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  width: 70vh;
+}

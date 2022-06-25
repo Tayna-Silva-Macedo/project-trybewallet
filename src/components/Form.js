@@ -5,6 +5,8 @@ import Input from './Input';
 import Select from './Select';
 import { addExpensesThunk, editExpenseAction } from '../actions';
 
+import '../components/form.css';
+
 const paymentMethods = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
 
 const category = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
@@ -63,10 +65,10 @@ class Form extends React.Component {
     };
 
     return (
-      <div>
+      <div className='form'>
         <Input
           data-testid="value-input"
-          label="Valor"
+          label="Valor: "
           type="number"
           name="value"
           value={ value }
@@ -74,28 +76,28 @@ class Form extends React.Component {
         />
         <Input
           data-testid="description-input"
-          label="Descrição"
+          label="Descrição: "
           type="text"
           name="description"
           value={ description }
           onChange={ this.handleChange }
         />
         <Select
-          label="Moeda"
+          label="Moeda: "
           options={ currencies }
           name="currency"
           value={ currency }
           onChange={ this.handleChange }
         />
         <Select
-          label="Método de pagamento"
+          label="Método de pagamento: "
           options={ paymentMethods }
           name="method"
           value={ method }
           onChange={ this.handleChange }
         />
         <Select
-          label="Categoria"
+          label="Categoria: "
           options={ category }
           name="tag"
           value={ tag }

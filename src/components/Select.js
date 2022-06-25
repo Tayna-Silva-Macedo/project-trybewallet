@@ -1,22 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../components/select.css';
+
 class Select extends React.Component {
   render() {
     const { label, options, name, value, onChange } = this.props;
 
     return (
-      <label htmlFor={ name }>
+      <label htmlFor={name}>
         {label}
         <select
-          data-testid={ `${name}-input` }
-          name={ name }
-          id={ name }
-          value={ value }
-          onChange={ onChange }
+          className='select'
+          data-testid={`${name}-input`}
+          name={name}
+          id={name}
+          value={value}
+          onChange={onChange}
         >
           {options.map((option, index) => (
-            <option key={ index } value={ option }>
+            <option key={index} value={option}>
               {option}
             </option>
           ))}
