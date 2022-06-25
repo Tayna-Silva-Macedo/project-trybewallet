@@ -40,9 +40,13 @@
 }
 
 .table .edit-button {
-  background-color: #495168;
+  background-color: #260729;
 }
 
 .table .delete-button {
   background-color: red;
+}
+
+.table, .table tr, .table th, .table td {
+  border: 1px solid black;
 }

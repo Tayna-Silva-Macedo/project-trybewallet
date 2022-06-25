@@ -56,10 +56,9 @@ export const setEditAction = (id) => ({
   payload: id,
 });
 
-export const editExpenseAction = (id, expense) => ({
+export const editExpenseAction = (expense) => ({
   type: EDIT_EXPENSE,
   payload: {
-    ...id,
     ...expense,
   },
 });
