@@ -40,7 +40,7 @@ class Header extends React.Component {
           </div>
           <div className='wallet-container'>
             <div className='wallet-email'>
-              <img className='user-image' src={perfil} alt='Imagem de perfil' />
+              <img className='user-image' src={perfil} alt='Imagem de perfil'/>
               <p className='user-email' data-testid='email-field'>
                 {email}
               </p>
