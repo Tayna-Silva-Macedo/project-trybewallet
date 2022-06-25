@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Tayna-Silva-Macedo.github.io/project-trybewallet/",
   "name": "sd-0x-project-trybewallet",
   "version": "0.1.0",
   "private": true,
@@ -22,6 +23,8 @@
     "stylelint-order": "4.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,6 +50,7 @@
     "@sheerun/mutationobserver-shim": "0.3.3",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "18.2.0",
+    "eslint-config-trybe-frontend": "1.2.3",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-jsx-a11y": "6.4.1",
@@ -54,10 +58,10 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-react-redux": "3.3.0",
     "eslint-plugin-sonarjs": "^0.13.0",
+    "gh-pages": "^4.0.0",
     "jest-localstorage-mock": "2.4.3",
     "react-error-overlay": "6.0.9",
     "stylelint": "13.8.0",
-    "stylelint-config-standard": "20.0.0",
-    "eslint-config-trybe-frontend": "1.2.3"
+    "stylelint-config-standard": "20.0.0"
   }
 }
